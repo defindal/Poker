@@ -57,4 +57,5 @@ public class Ranker {
     public boolean isRoyalFlush(){
         return false;
     }
+//    oleh sigit
 }
