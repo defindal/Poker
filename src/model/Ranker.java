@@ -11,8 +11,12 @@ import java.util.List;
 /**
  *
  * @author deph
+ * @viewer YusufHA, dkk.
  */
 public class Ranker {
+    /**
+     * Komen;
+     */
     private List<Card> cards;
     
     public Ranker(List<Card> cards){
@@ -28,6 +32,10 @@ public class Ranker {
     */
 =======
     /**
+<<<<<<< HEAD
+     * Dony Salman Adi Pradana
+     * @return 
+=======
      * 
 <<<<<<< HEAD
      * @return 
