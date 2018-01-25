@@ -18,7 +18,7 @@ public class Ranker {
     public Ranker(List<Card> cards){
         if(cards.size() == 5) this.cards = cards;
     }
-    // Ryan
+
     public boolean isOnePair(){
         
         return false;
@@ -57,4 +57,5 @@ public class Ranker {
     public boolean isRoyalFlush(){
         return false;
     }
+    //ryan
 }
