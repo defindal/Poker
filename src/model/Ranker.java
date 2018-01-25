@@ -18,7 +18,10 @@ public class Ranker {
     public Ranker(List<Card> cards){
         if(cards.size() == 5) this.cards = cards;
     }
-    
+    /**
+     * Dony Salman Adi Pradana
+     * @return 
+     */
     public boolean isOnePair(){
         
         return false;
