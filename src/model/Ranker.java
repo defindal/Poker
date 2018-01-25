@@ -19,6 +19,10 @@ public class Ranker {
         if(cards.size() == 5) this.cards = cards;
     }
     
+    /**
+     * 
+     * @return kartu
+     */
     public boolean isOnePair(){
         
         return false;
