@@ -24,14 +24,14 @@ public class Ranker {
         //Hahahaha
         //kimochi
     }
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
+//<<<<<<< HEAD
+//
+//=======
+//<<<<<<< HEAD
     /*
         wuushhh
     */
-=======
+//=======
     /**
 <<<<<<< HEAD
      * Dony Salman Adi Pradana
@@ -44,8 +44,8 @@ public class Ranker {
      * @return awaww
 >>>>>>> c8e98f6a13b0597264c0c3117a1a847d10823b8f
      */
->>>>>>> 8cd39e165f4c0a8432a7e2f7bcb2de0989adb150
->>>>>>> c014b98910c49cd832ff839b256a3474c6a5affb
+//>>>>>>> 8cd39e165f4c0a8432a7e2f7bcb2de0989adb150
+//>>>>>>> c014b98910c49cd832ff839b256a3474c6a5affb
     public boolean isOnePair(){
         
         return false;
@@ -108,16 +108,17 @@ public class Ranker {
     public boolean isRoyalFlush(){
         return false;
     }
-<<<<<<< HEAD
-    //ryan
-=======
-<<<<<<< HEAD
-    
-    /*
-        wuushhh
-    */
-=======
-//    oleh sigit tai
->>>>>>> 8cd39e165f4c0a8432a7e2f7bcb2de0989adb150
->>>>>>> c014b98910c49cd832ff839b256a3474c6a5affb
 }
+//<<<<<<< HEAD
+//    //ryan
+//=======
+//<<<<<<< HEAD
+//    
+//    /*
+//        wuushhh
+//    */
+//=======
+////    oleh sigit tai
+//>>>>>>> 8cd39e165f4c0a8432a7e2f7bcb2de0989adb150
+//>>>>>>> c014b98910c49cd832ff839b256a3474c6a5affb
+//}
