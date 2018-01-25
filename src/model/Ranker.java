@@ -108,7 +108,7 @@ public class Ranker {
         wuushhh
     */
 =======
-//    oleh sigit
+//    oleh sigit tai
 >>>>>>> 8cd39e165f4c0a8432a7e2f7bcb2de0989adb150
 >>>>>>> c014b98910c49cd832ff839b256a3474c6a5affb
 }
