@@ -23,6 +23,14 @@ public class Ranker {
         if(cards.size() == 5) this.cards = cards;
         //Hahahaha
     }
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+    /*
+        wuushhh
+    */
+=======
     /**
      * 
 <<<<<<< HEAD
@@ -31,43 +39,80 @@ public class Ranker {
      * @return awaww
 >>>>>>> c8e98f6a13b0597264c0c3117a1a847d10823b8f
      */
+>>>>>>> 8cd39e165f4c0a8432a7e2f7bcb2de0989adb150
+>>>>>>> c014b98910c49cd832ff839b256a3474c6a5affb
     public boolean isOnePair(){
         
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isTwoPairs(){
         
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isThreeAKind(){
     
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isStraight(){
         return false;
     }
     
+    /*
+        wuushhh
+    */
      public boolean isFlush(){
         return false;
     }
      
+    /*
+        wuushhh
+    */
       public boolean isFullHouse(){
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isFourOfAKind(){
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isStraighFlush(){
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isRoyalFlush(){
         return false;
     }
+<<<<<<< HEAD
+    //ryan
+=======
+<<<<<<< HEAD
+    
+    /*
+        wuushhh
+    */
+=======
 //    oleh sigit
+>>>>>>> 8cd39e165f4c0a8432a7e2f7bcb2de0989adb150
+>>>>>>> c014b98910c49cd832ff839b256a3474c6a5affb
 }
