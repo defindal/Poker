@@ -18,43 +18,73 @@ public class Ranker {
     public Ranker(List<Card> cards){
         if(cards.size() == 5) this.cards = cards;
     }
-    
+    /*
+        wuushhh
+    */
     public boolean isOnePair(){
         
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isTwoPairs(){
         
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isThreeAKind(){
     
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isStraight(){
         return false;
     }
     
+    /*
+        wuushhh
+    */
      public boolean isFlush(){
         return false;
     }
      
+    /*
+        wuushhh
+    */
       public boolean isFullHouse(){
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isFourOfAKind(){
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isStraighFlush(){
         return false;
     }
     
+    /*
+        wuushhh
+    */
     public boolean isRoyalFlush(){
         return false;
     }
+    
+    /*
+        wuushhh
+    */
 }
