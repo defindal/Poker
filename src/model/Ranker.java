@@ -21,8 +21,16 @@ public class Ranker {
     
     public Ranker(List<Card> cards){
         if(cards.size() == 5) this.cards = cards;
+        //Hahahaha
     }
-    
+    /**
+     * 
+<<<<<<< HEAD
+     * @return 
+=======
+     * @return awaww
+>>>>>>> c8e98f6a13b0597264c0c3117a1a847d10823b8f
+     */
     public boolean isOnePair(){
         
         return false;
@@ -61,4 +69,5 @@ public class Ranker {
     public boolean isRoyalFlush(){
         return false;
     }
+//    oleh sigit
 }
