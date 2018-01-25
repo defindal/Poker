@@ -17,6 +17,7 @@ public class Ranker {
     
     public Ranker(List<Card> cards){
         if(cards.size() == 5) this.cards = cards;
+        //Hahahaha
     }
     
     public boolean isOnePair(){
