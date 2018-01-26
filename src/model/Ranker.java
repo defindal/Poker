@@ -22,28 +22,29 @@ public class Ranker {
         if (cards.size() == 5) {
             this.cards = cards;
         }
-    } 
-    
+    }
+
     /**
      *
      * @return kartu as
      */
-
-    public boolean isOnePair(){
-        int count=0;
-        boolean check=true;
-        for (int i = 0; i < cards.size() ; i++) {
-            for (int j = i+1; j< cards.size(); j++) {
-                if (cards.get(i).getLevel()==cards.get(j).getLevel()) {
+    public boolean isOnePair() {
+        int count = 0;
+        boolean check = true;
+        for (int i = 0; i < cards.size(); i++) {
+            for (int j = i + 1; j < cards.size(); j++) {
+                if (cards.get(i).getLevel() == cards.get(j).getLevel()) {
                     count++;
-                    
-                    if(count > 1) return false;
+
+                    if (count > 1) {
+                        return false;
+                    }
                 }
             }
-            
+
         }
-        if (count!=1) {
-            check=false;
+        if (count != 1) {
+            check = false;
         }
         return check;
     }
@@ -53,7 +54,7 @@ public class Ranker {
         return false;
     }
 
-    public boolean isThreeAKind(){
+    public boolean isThreeAKind() {
         int[] arr = new int[5];
         int count = 0;
         for (int i = 0; i < cards.size(); i++) {
@@ -63,23 +64,19 @@ public class Ranker {
             while (j < cards.size()) {
                 if (cards.get(j).getLevel() == a) {
                     count++;
-                }
-                else {
+                } else {
                     arr[k] = cards.get(j).getLevel();
                     k++;
                 }
                 j++;
             }
             if (count == 3) {
-                for (int l = 0; l < arr.length-1; l++){
-                    if (arr[l] == arr[l+1]){
-                        return false;
-                    }
-                    else {
-                        return true;
-                    }
+                if (arr[0] == arr[1]) {
+                    return false;
+                } else {
+                    return true;
                 }
-            } else if (count == 2){
+            } else if (count == 2) {
                 return false;
             } else {
                 count = 0;
@@ -109,10 +106,10 @@ public class Ranker {
 
     public boolean isFourOfAKind() {
         for (int i = 0; i < cards.size(); i++) {
-            int jumlahsama= 0;
-            for (int j = 0; j < cards.size() ; j++) {
-                if (cards.get(i).getLevel()==cards.get(j).getLevel()) {
-                    jumlahsama ++;
+            int jumlahsama = 0;
+            for (int j = 0; j < cards.size(); j++) {
+                if (cards.get(i).getLevel() == cards.get(j).getLevel()) {
+                    jumlahsama++;
                 }
             }
             if (jumlahsama == 4) {
