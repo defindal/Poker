@@ -127,7 +127,7 @@ public class Ranker {
     }
         return false;
     }
-
+ 
     /**
      * isFlush -> Menentukan apakah semua kartu bergambar sama.
      * Yusuf Hanafi Angkat
