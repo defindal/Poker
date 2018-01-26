@@ -146,27 +146,39 @@ public class RankerIT {
      */
     @org.junit.Test
     public void testIsThreeAKind() {
-        System.out.println("isThreeAKind");
-        Ranker instance = null;
-        boolean expResult = false;
-        boolean result = instance.isThreeAKind();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-
         List<Card> cards = new ArrayList<Card>();
         cards.add(new Card(Suit.CLUBS,11));
         cards.add(new Card(Suit.DIAMOND,11));
         cards.add(new Card(Suit.SPADES,11));
-        cards.add(new Card(Suit.HEARTS,3));
-        cards.add(new Card(Suit.SPADES,3));
-        Ranker instance = new Ranker(cards);
-        assertTrue(instance.isThreeAKind());
-//        boolean expResult = false;
-//        boolean result = instance.isThreeAKind();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-
-//        fail("The test case is a prototype.");
+        cards.add(new Card(Suit.HEARTS,6));
+        cards.add(new Card(Suit.SPADES,1));
+        Ranker instance3kindt = new Ranker(cards);
+        assertTrue(instance3kindt.isThreeAKind());
+    }
+    
+    @org.junit.Test
+    public void testIsThreeAKindFalse1() {       
+        List<Card> cards1 = new ArrayList<Card>();
+        cards1.add(new Card(Suit.CLUBS,3));
+        cards1.add(new Card(Suit.DIAMOND,6));
+        cards1.add(new Card(Suit.SPADES,3));
+        cards1.add(new Card(Suit.HEARTS,6));
+        cards1.add(new Card(Suit.DIAMOND,3));
+        Ranker instance3kindf = new Ranker(cards1);
+        assertFalse(instance3kindf.isThreeAKind());
+    }
+    
+    @org.junit.Test
+    public void testIsThreeAKindFalse2() {
+        System.out.println("isThreeAKind");
+        List<Card> cards2 = new ArrayList<Card>();
+        cards2.add(new Card(Suit.CLUBS,5));
+        cards2.add(new Card(Suit.DIAMOND,2));
+        cards2.add(new Card(Suit.SPADES,13));
+        cards2.add(new Card(Suit.HEARTS,13));
+        cards2.add(new Card(Suit.DIAMOND,10));
+        Ranker instance3kindf2 = new Ranker(cards2);
+        assertFalse(instance3kindf2.isThreeAKind());
     }
 
     /**
@@ -244,7 +256,6 @@ public class RankerIT {
      * Test of isFourOfAKind method, of class Ranker.
      */
     @org.junit.Test
-<<<<<<< HEAD
     public void testIsFourOfAKindTrue() {
         System.out.println("isFourOfAKind is True");
         List<Card> cardsT = new ArrayList<Card>();
@@ -269,34 +280,7 @@ public class RankerIT {
         cardsF1.add(new Card(Suit.SPADES,8));
         Ranker instanceF1 = new Ranker(cardsF1);
         assertFalse(instanceF1.isFourOfAKind());
-        
-=======
-    public void testIsFourOfAKind() {
-        System.out.println("isFourOfAKind");
-        Ranker instance = null;
-        boolean expResult = false;
-        boolean result = instance.isFourOfAKind();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-
-        List<Card> cards = new ArrayList<Card>();
-        cards.add(new Card(Suit.CLUBS,10));
-        cards.add(new Card(Suit.DIAMOND,10));
-        cards.add(new Card(Suit.SPADES,7));
-        cards.add(new Card(Suit.HEARTS,10));
-        cards.add(new Card(Suit.SPADES,10));
-        Ranker instance = new Ranker(cards);
-        assertTrue(instance.isFourOfAKind());
-//        Ranker instance = null;
-//        boolean expResult = false;
-//        boolean result = instance.isFourOfAKind();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-
-//        fail("The test case is a prototype.");
->>>>>>> b6d7d7d62fefd6fa5e949f67d0ac1b99e35ab4a7
     }
-
     @org.junit.Test
     public void testIsFourOfAKindFalse2() {
         System.out.println("isFourOfAKind is False1");
@@ -307,8 +291,7 @@ public class RankerIT {
         cardsF2.add(new Card(Suit.HEARTS,10));
         cardsF2.add(new Card(Suit.SPADES,6));
         Ranker instanceF2 = new Ranker(cardsF2);
-        assertFalse(instanceF2.isFourOfAKind());
-        
+        assertFalse(instanceF2.isFourOfAKind());   
     }
     
     /**
