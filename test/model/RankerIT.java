@@ -21,22 +21,22 @@ import static org.junit.Assert.*;
  * @author deph
  */
 public class RankerIT {
-    
+
     public RankerIT() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -48,42 +48,97 @@ public class RankerIT {
     public void testIsOnePair() {
         System.out.println("isOnePair");
         List<Card> cards = new ArrayList<Card>();
-        cards.add(new Card(Suit.CLUBS,10));
-        cards.add(new Card(Suit.DIAMOND,10));
-        cards.add(new Card(Suit.SPADES,1));
-        cards.add(new Card(Suit.HEARTS,11));
-        cards.add(new Card(Suit.CLUBS,7));
-        
+        cards.add(new Card(Suit.CLUBS, 10));
+        cards.add(new Card(Suit.DIAMOND, 10));
+        cards.add(new Card(Suit.SPADES, 1));
+        cards.add(new Card(Suit.HEARTS, 11));
+        cards.add(new Card(Suit.CLUBS, 7));
+
         Ranker instance = new Ranker(cards);
         assertTrue(instance.isOnePair());
-        
+
     }
+
     public void testIsOnePairFalse1() {
         System.out.println("isNotOnePair");
         List<Card> cards = new ArrayList<Card>();
-        cards.add(new Card(Suit.CLUBS,10));
-        cards.add(new Card(Suit.DIAMOND,10));
-        cards.add(new Card(Suit.SPADES,10));
-        cards.add(new Card(Suit.HEARTS,11));
-        cards.add(new Card(Suit.CLUBS,7));
-        
+        cards.add(new Card(Suit.CLUBS, 10));
+        cards.add(new Card(Suit.DIAMOND, 10));
+        cards.add(new Card(Suit.SPADES, 10));
+        cards.add(new Card(Suit.HEARTS, 11));
+        cards.add(new Card(Suit.CLUBS, 7));
+
         Ranker instance = new Ranker(cards);
         assertTrue(instance.isOnePair());
+
+
+        System.out.println("isNotOnePair");
+        List<Card> cards2 = new ArrayList<Card>();
+        cards2.add(new Card(Suit.CLUBS,10));
+        cards2.add(new Card(Suit.DIAMOND,10));
+        cards2.add(new Card(Suit.SPADES,10));
+        cards2.add(new Card(Suit.HEARTS,11));
+        cards2.add(new Card(Suit.CLUBS,10));
+        
+        Ranker instance2 = new Ranker(cards2);
+        assertFalse(instance2.isOnePair());
+        
+        System.out.println("isNotOnePair");
+        List<Card> cards3 = new ArrayList<Card>();
+        cards3.add(new Card(Suit.CLUBS,10));
+        cards3.add(new Card(Suit.DIAMOND,10));
+        cards3.add(new Card(Suit.SPADES,1));
+        cards3.add(new Card(Suit.HEARTS,11));
+        cards3.add(new Card(Suit.CLUBS,10));
+        
+        Ranker instance3 = new Ranker(cards3);
+        assertFalse(instance3.isOnePair());
         
     }
+    
 
     /**
      * Test of isTwoPairs method, of class Ranker.
      */
     @org.junit.Test
     public void testIsTwoPairs() {
-        System.out.println("isTwoPairs");
-        Ranker instance = null;
-        boolean expResult = false;
-        boolean result = instance.isTwoPairs();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("isTwoPairs(Case True)");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.DIAMOND, 10));
+        cards.add(new Card(Suit.HEARTS, 7));
+        cards.add(new Card(Suit.SPADES, 8));
+        cards.add(new Card(Suit.HEARTS, 8));
+        cards.add(new Card(Suit.CLUBS, 7));
+
+        Ranker instance = new Ranker(cards);
+        assertTrue(instance.isTwoPairs());
+
+        System.out.println("isTwoPairs (Case False 1)");
+        cards.add(new Card(Suit.DIAMOND, 7));
+        cards.add(new Card(Suit.SPADES, 7));
+        cards.add(new Card(Suit.HEARTS, 8));
+        cards.add(new Card(Suit.CLUBS, 8));
+        cards.add(new Card(Suit.HEARTS, 7));
+
+        assertFalse(instance.isTwoPairs());
+
+        System.out.println("isTwoPairs (Case False 2)");
+        cards.add(new Card(Suit.CLUBS, 1));
+        cards.add(new Card(Suit.HEARTS, 4));
+        cards.add(new Card(Suit.DIAMOND, 6));
+        cards.add(new Card(Suit.DIAMOND, 2));
+        cards.add(new Card(Suit.SPADES, 4));
+
+        assertFalse(instance.isTwoPairs());
+
+        System.out.println("isTwoPairs (Case False 3)");
+        cards.add(new Card(Suit.HEARTS, 1));
+        cards.add(new Card(Suit.HEARTS, 5));
+        cards.add(new Card(Suit.HEARTS, 3));
+        cards.add(new Card(Suit.HEARTS, 4));
+        cards.add(new Card(Suit.HEARTS, 2));
+
+        assertFalse(instance.isTwoPairs());
     }
 
     /**
@@ -97,7 +152,21 @@ public class RankerIT {
         boolean result = instance.isThreeAKind();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.CLUBS,11));
+        cards.add(new Card(Suit.DIAMOND,11));
+        cards.add(new Card(Suit.SPADES,11));
+        cards.add(new Card(Suit.HEARTS,3));
+        cards.add(new Card(Suit.SPADES,3));
+        Ranker instance = new Ranker(cards);
+        assertTrue(instance.isThreeAKind());
+//        boolean expResult = false;
+//        boolean result = instance.isThreeAKind();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -111,24 +180,50 @@ public class RankerIT {
         boolean result = instance.isStraight();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
      * Test of isFlush method, of class Ranker.
+     * Yusuf Hanafi Angkat
      */
     @org.junit.Test
     public void testIsFlush() {
-        System.out.println("isFlush");
+        
+        System.out.println("isFlush 1 : Benar (assertTrue)");
         List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.HEARTS, 10));
+        cards.add(new Card(Suit.HEARTS, 7));
+        cards.add(new Card(Suit.HEARTS, 8));
+        cards.add(new Card(Suit.HEARTS, 5));
+        cards.add(new Card(Suit.HEARTS, 7));
         cards.add(new Card(Suit.HEARTS,10));
         cards.add(new Card(Suit.HEARTS,7));
         cards.add(new Card(Suit.HEARTS,8));
         cards.add(new Card(Suit.HEARTS,5));
         cards.add(new Card(Suit.HEARTS,7));
-        
         Ranker instance = new Ranker(cards);
         assertTrue(instance.isFlush());
+                
+        System.out.println("isFlush 2 : Salah (assertFalse)");
+        List<Card> cards2 = new ArrayList<Card>();
+        cards2.add(new Card(Suit.DIAMOND,10));
+        cards2.add(new Card(Suit.HEARTS,7));
+        cards2.add(new Card(Suit.HEARTS,8));
+        cards2.add(new Card(Suit.HEARTS,5));
+        cards2.add(new Card(Suit.HEARTS,7));
+        Ranker instance2 = new Ranker(cards2);
+        assertFalse(instance2.isFlush());
+        
+        System.out.println("isFlush 3 : Salah (assertFalse)");
+        List<Card> cards3 = new ArrayList<Card>();
+        cards3.add(new Card(Suit.HEARTS,10));
+        cards3.add(new Card(Suit.HEARTS,7));
+        cards3.add(new Card(Suit.SPADES,8));
+        cards3.add(new Card(Suit.HEARTS,5));
+        cards3.add(new Card(Suit.DIAMOND,7));
+        Ranker instance3 = new Ranker(cards3);
+        assertFalse(instance3.isFlush());
     }
 
     /**
@@ -187,7 +282,22 @@ public class RankerIT {
         boolean result = instance.isFourOfAKind();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.CLUBS,10));
+        cards.add(new Card(Suit.DIAMOND,10));
+        cards.add(new Card(Suit.SPADES,7));
+        cards.add(new Card(Suit.HEARTS,10));
+        cards.add(new Card(Suit.SPADES,10));
+        Ranker instance = new Ranker(cards);
+        assertTrue(instance.isFourOfAKind());
+//        Ranker instance = null;
+//        boolean expResult = false;
+//        boolean result = instance.isFourOfAKind();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -201,7 +311,7 @@ public class RankerIT {
         boolean result = instance.isStraighFlush();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -215,7 +325,7 @@ public class RankerIT {
         boolean result = instance.isRoyalFlush();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
-    
+
 }
