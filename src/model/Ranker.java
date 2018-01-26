@@ -28,7 +28,7 @@ public class Ranker {
      * @return kartu as
      */
     public boolean isOnePair(){
-        
+        String aaa;
         return false;
     }
     
