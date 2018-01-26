@@ -105,7 +105,6 @@ public class Ranker {
     }
     //damar
     public boolean isStraight() {
-//        return true;
         List cards = new ArrayList();
         boolean isStraight = false;
         cards.add("1");
@@ -194,6 +193,11 @@ public class Ranker {
     }
 
     //Muhammad Donny Setya
+    /**
+    * Method ini untuk mendapatkan nilai Straight Flush
+    * Method ini berhubungan dengan method isStraight dan isFlush
+    * Method ini kebalikan dari method isRoyalFlush
+    */
     public boolean isStraighFlush() {
         if(isStraight() && isFlush()){
             int i = 0;
