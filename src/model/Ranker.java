@@ -129,7 +129,7 @@ public class Ranker {
     }
 
     /**
-     * isFlush
+     * isFlush -> Menentukan apakah semua kartu bergambar sama.
      * Yusuf Hanafi Angkat
      */
     public boolean isFlush() {

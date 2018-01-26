@@ -201,7 +201,7 @@ public class RankerIT {
      */
     @org.junit.Test
     public void testIsFlush() {
-        
+        //Test Benar : Semua kartu bergambar sama.
         System.out.println("isFlush 1 : Benar (assertTrue)");
         List<Card> cards = new ArrayList<Card>();
         cards.add(new Card(Suit.HEARTS, 10));
@@ -211,7 +211,7 @@ public class RankerIT {
         cards.add(new Card(Suit.HEARTS, 7));
         Ranker instance = new Ranker(cards);
         assertTrue(instance.isFlush());
-                
+        //Test Salah : 1 kartu bergambar berbeda.        
         System.out.println("isFlush 2 : Salah (assertFalse)");
         List<Card> cards2 = new ArrayList<Card>();
         cards2.add(new Card(Suit.DIAMOND,10));
@@ -221,7 +221,7 @@ public class RankerIT {
         cards2.add(new Card(Suit.HEARTS,7));
         Ranker instance2 = new Ranker(cards2);
         assertFalse(instance2.isFlush());
-        
+        //Test Salah : Kartu bergambar berbeda.
         System.out.println("isFlush 3 : Salah (assertFalse)");
         List<Card> cards3 = new ArrayList<Card>();
         cards3.add(new Card(Suit.HEARTS,10));
