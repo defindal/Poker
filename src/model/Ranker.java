@@ -101,6 +101,10 @@ public class Ranker {
         return false;
     }
 
+    /**
+     * isFlush
+     * Yusuf Hanafi Angkat
+     */
     public boolean isFlush() {
         boolean flush = true;
         for (int x = 0; x < 4; x++) {
