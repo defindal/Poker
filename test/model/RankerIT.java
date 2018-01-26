@@ -157,8 +157,7 @@ public class RankerIT {
     }
     
     @org.junit.Test
-    public void testIsThreeAKindFalse1() {
-        System.out.println("isThreeAKind");
+    public void testIsThreeAKindFalse1() {       
         List<Card> cards1 = new ArrayList<Card>();
         cards1.add(new Card(Suit.CLUBS,3));
         cards1.add(new Card(Suit.DIAMOND,6));
@@ -288,17 +287,44 @@ public class RankerIT {
      * Test of isFourOfAKind method, of class Ranker.
      */
     @org.junit.Test
-    public void testIsFourOfAKind() {
-        List<Card> cards = new ArrayList<Card>();
-        cards.add(new Card(Suit.CLUBS,10));
-        cards.add(new Card(Suit.DIAMOND,10));
-        cards.add(new Card(Suit.SPADES,7));
-        cards.add(new Card(Suit.HEARTS,10));
-        cards.add(new Card(Suit.SPADES,10));
-        Ranker instance = new Ranker(cards);
-        assertTrue(instance.isFourOfAKind());
+    public void testIsFourOfAKindTrue() {
+        System.out.println("isFourOfAKind is True");
+        List<Card> cardsT = new ArrayList<Card>();
+        cardsT.add(new Card(Suit.CLUBS,10));
+        cardsT.add(new Card(Suit.DIAMOND,10));
+        cardsT.add(new Card(Suit.SPADES,10));
+        cardsT.add(new Card(Suit.HEARTS,10));
+        cardsT.add(new Card(Suit.SPADES,6));
+        Ranker instanceT = new Ranker(cardsT);
+        assertTrue(instanceT.isFourOfAKind());
+        
     }
-
+    
+    @org.junit.Test
+    public void testIsFourOfAKindFalse1() {
+        System.out.println("isFourOfAKind is False1");
+        List<Card> cardsF1 = new ArrayList<Card>();
+        cardsF1.add(new Card(Suit.CLUBS,8));
+        cardsF1.add(new Card(Suit.DIAMOND,7));
+        cardsF1.add(new Card(Suit.SPADES,10));
+        cardsF1.add(new Card(Suit.HEARTS,10));
+        cardsF1.add(new Card(Suit.SPADES,8));
+        Ranker instanceF1 = new Ranker(cardsF1);
+        assertFalse(instanceF1.isFourOfAKind());
+    }
+    @org.junit.Test
+    public void testIsFourOfAKindFalse2() {
+        System.out.println("isFourOfAKind is False1");
+        List<Card> cardsF2 = new ArrayList<Card>();
+        cardsF2.add(new Card(Suit.CLUBS,8));
+        cardsF2.add(new Card(Suit.DIAMOND,10));
+        cardsF2.add(new Card(Suit.SPADES,10));
+        cardsF2.add(new Card(Suit.HEARTS,10));
+        cardsF2.add(new Card(Suit.SPADES,6));
+        Ranker instanceF2 = new Ranker(cardsF2);
+        assertFalse(instanceF2.isFourOfAKind());   
+    }
+    
     /**
      * Test of isStraighFlush method, of class Ranker.
      */
