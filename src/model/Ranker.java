@@ -30,7 +30,12 @@ public class Ranker {
      *
      * @return kartu as
      */
-    // Ryan
+    /**
+     * 
+     * isOnePair merupakan menentukan sepasang kartu yang sama. Method isOnePair memerlukan variabel count untuk mengukur pasang kartu yang sama.
+     * Kartu akan dibandingkan menggunakan perulangan. Variabel count akan bertambah jika ada kartu yang sama. 
+     * Jika variabel count lebih dari 1 maka return false dan perulangan dihentikan. Jika count sama dengan 0 maka return akan false.
+     */
     public boolean isOnePair() {
         int count = 0;
         boolean check = true;
@@ -169,7 +174,14 @@ public class Ranker {
         }   
     }return false;
 }
-    //Sigit d'masiv
+    /**
+     * method fourofkind akan menghasilkan nilai True dan False
+     * method ini akan mengeluarkan nilai True Jika 4 dari total semua kartu (5) sama level.
+     * @return True
+     * method ini akan mengeluarkan nilai False . Jika tidak memenuhi syarat .
+     *
+     * by: Sigit Yudhianto
+     */
     public boolean isFourOfAKind() {
         for (int i = 0; i < cards.size(); i++) {
             int jumlahsama = 0;
