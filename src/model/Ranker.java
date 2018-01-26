@@ -83,7 +83,7 @@ public class Ranker {
         boolean flush = true;
         for (int x = 0; x < 4; x++) {
             if (cards.get(x).getSuit() != cards.get(x + 1).getSuit()) {
-                flush = false;
+                return false;
             }
         }
         return flush;
