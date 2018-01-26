@@ -110,15 +110,15 @@ public class Ranker {
         }
         return flush;
     }
-
+    
     public boolean isFullHouse() {
         
-boolean fullhouse = true;
+        boolean fullhouse = true;
         int count=0;
         int[] notcount = new int[5];
         int j = 0;
         int m=0;
-        for (int i = 0; i < cards.get(i).getLevel(); i++)
+        for (int i = 0; i < cards.size(); i++)
         {
             int a = cards.get(i).getLevel();
             while (j < cards.size()) {
@@ -138,7 +138,7 @@ boolean fullhouse = true;
             }
         }   
     }return false;
-    }
+}
     
     public boolean isFourOfAKind() {
         for (int i = 0; i < cards.size(); i++) {
