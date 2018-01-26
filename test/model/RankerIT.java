@@ -209,11 +209,6 @@ public class RankerIT {
         cards.add(new Card(Suit.HEARTS, 8));
         cards.add(new Card(Suit.HEARTS, 5));
         cards.add(new Card(Suit.HEARTS, 7));
-        cards.add(new Card(Suit.HEARTS,10));
-        cards.add(new Card(Suit.HEARTS,7));
-        cards.add(new Card(Suit.HEARTS,8));
-        cards.add(new Card(Suit.HEARTS,5));
-        cards.add(new Card(Suit.HEARTS,7));
         Ranker instance = new Ranker(cards);
         assertTrue(instance.isFlush());
                 
