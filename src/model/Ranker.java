@@ -58,6 +58,17 @@ public class Ranker {
     }
     
     public boolean isFourOfAKind(){
+        for (int i = 0; i < cards.size(); i++) {
+            int jumlahsama= 0;
+            for (int j = i+1; j < i; j++) {
+                if (cards.get(i)==cards.get(j)) {
+                    jumlahsama ++;
+                }
+            }
+            if (jumlahsama == 4) {
+                return true;
+            }
+        }
         return false;
     }
     
