@@ -7,6 +7,7 @@
 package model;
 
 import entity.Card;
+import entity.Suit;
 import java.util.List;
 
 /**
@@ -14,54 +15,92 @@ import java.util.List;
  * @author deph
  */
 public class Ranker {
+
     private List<Card> cards;
-    
-    public Ranker(List<Card> cards){
-        if(cards.size() == 5) {
+
+    public Ranker(List<Card> cards) {
+        if (cards.size() == 5) {
             this.cards = cards;
         }
-    }
-    /**
-     * cobaaaa
-     */
+    } 
     
     /**
-     * 
+     *
      * @return kartu as
      */
+
     public boolean isOnePair(){
-        String aaa;
+        int count=0;
+        boolean check=true;
+        for (int i = 0; i < cards.size() ; i++) {
+            for (int j = i+1; j< cards.size(); j++) {
+                if (cards.get(i)==cards.get(j)) {
+                    count++;
+                    
+                    if(count > 1) return false;
+                }
+            }
+            
+        }
+        if (count!=1) {
+            check=false;
+        }
+        return check;
+    }
+
+    public boolean isTwoPairs() {
+
         return false;
     }
-    
-    public boolean isTwoPairs(){
-        
-        return false;
-    }
-    
+
     public boolean isThreeAKind(){
-    
-        return false;
-    }
-    
-    public boolean isStraight(){
-        return false;
-    }
-    
-    public boolean isFlush(){
-        
-        return false;
-    }
-     
-      public boolean isFullHouse(){
-        return false;
-    }
-    
-    public boolean isFourOfAKind(){
+        int count = 0;
         for (int i = 0; i < cards.size(); i++) {
+            int a = cards.get(i).getLevel();
+            int j = 0;
+            while (j < cards.size()) {
+                if (cards.get(j).getLevel() == a) {
+                    count++;
+                }
+                j++;
+            }
+            if (count == 3) {
+                return true;
+            } else if (count == 2){
+                return false;
+            } else {
+                count = 0;
+            }
+        }
+        return false;
+    }
+
+    public boolean isStraight() {
+        return false;
+    }
+
+    public boolean isFlush() {
+        boolean flush = true;
+        for (int x = 0; x < 4; x++) {
+            if (cards.get(x).getSuit() != cards.get(x + 1).getSuit()) {
+                flush = false;
+            }
+        }
+        return flush;
+    }
+
+    public boolean isFullHouse() {
+        return false;
+    }
+
+    public boolean isFourOfAKind() {
+        
+
+
+ for (int i = 0; i < cards.size(); i++) {
             int jumlahsama= 0;
             for (int j = i+1; j < i; j++) {
-                if (cards.get(i)==cards.get(j)) {
+                if (cards.get(i).getLevel()==cards.get(j).getLevel()) {
                     jumlahsama ++;
                 }
             }
@@ -71,12 +110,12 @@ public class Ranker {
         }
         return false;
     }
-    
-    public boolean isStraighFlush(){
+
+    public boolean isStraighFlush() {
         return false;
     }
-    
-    public boolean isRoyalFlush(){
+
+    public boolean isRoyalFlush() {
         return false;
     }
 }
