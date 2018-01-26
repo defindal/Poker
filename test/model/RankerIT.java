@@ -40,7 +40,7 @@ public class RankerIT {
     /**
      * Test of isOnePair method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsOnePair() {
         System.out.println("isOnePair");
         Ranker instance = null;
@@ -54,7 +54,7 @@ public class RankerIT {
     /**
      * Test of isTwoPairs method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsTwoPairs() {
         System.out.println("isTwoPairs");
         Ranker instance = null;
@@ -68,7 +68,7 @@ public class RankerIT {
     /**
      * Test of isThreeAKind method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsThreeAKind() {
         System.out.println("isThreeAKind");
         Ranker instance = null;
@@ -82,7 +82,7 @@ public class RankerIT {
     /**
      * Test of isStraight method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsStraight() {
         System.out.println("isStraight");
         Ranker instance = null;
@@ -96,7 +96,7 @@ public class RankerIT {
     /**
      * Test of isFlush method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsFlush() {
         System.out.println("isFlush");
         Ranker instance = null;
@@ -110,7 +110,7 @@ public class RankerIT {
     /**
      * Test of isFullHouse method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsFullHouse() {
         System.out.println("isFullHouse");
         Ranker instance = null;
@@ -124,7 +124,7 @@ public class RankerIT {
     /**
      * Test of isFourOfAKind method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsFourOfAKind() {
         System.out.println("isFourOfAKind");
         Ranker instance = null;
@@ -138,7 +138,7 @@ public class RankerIT {
     /**
      * Test of isStraighFlush method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsStraighFlush() {
         System.out.println("isStraighFlush");
         Ranker instance = null;
@@ -152,7 +152,7 @@ public class RankerIT {
     /**
      * Test of isRoyalFlush method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsRoyalFlush() {
         System.out.println("isRoyalFlush");
         Ranker instance = null;

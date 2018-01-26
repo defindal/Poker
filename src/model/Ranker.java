@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,6 +20,10 @@ public class Ranker {
         if(cards.size() == 5) this.cards = cards;
     }
     
+    /**
+     * 
+     * @return kartu as
+     */
     public boolean isOnePair(){
         
         return false;
@@ -38,7 +43,8 @@ public class Ranker {
         return false;
     }
     
-     public boolean isFlush(){
+    public boolean isFlush(){
+        
         return false;
     }
      
