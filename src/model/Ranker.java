@@ -48,6 +48,10 @@ public class Ranker {
         }
         return check;
     }
+    
+    /*
+    by @april nf
+    */
 
     public boolean isTwoPairs() {
         boolean isTwoPairs = false;
