@@ -30,7 +30,7 @@ public class Ranker {
      * @return kartu as
      */
     public boolean isOnePair(){
-        int x = 30;
+        String aaa;
         return false;
     }
     
