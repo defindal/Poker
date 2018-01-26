@@ -143,7 +143,6 @@ public class Ranker {
     }
     
     public boolean isFullHouse() {
-        
         boolean fullhouse = true;
         int count=0;
         int[] notcount = new int[5];
