@@ -53,7 +53,7 @@ public class Ranker {
         boolean isTwoPairs = false;
         int counter = 0;
         for (int i = 0, j = i + 1; i < cards.size(); i++) {
-            if (cards.get(i) == cards.get(j)) {
+            if (cards.get(i).getLevel() == cards.get(j).getLevel()) {
                 counter++;
                 if (counter > 2 || counter < 2) {
                     isTwoPairs = false;
