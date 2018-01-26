@@ -116,6 +116,17 @@ public class Ranker {
     }
 
     public boolean isRoyalFlush() {
+        if (isFlush()&&isStraight()){
+            for (int i = 0 ; i<cards.size();i++){
+                if (cards.get(i).getLevel()==13){
+                    for (int j=0; j<cards.size();j++){
+                        if (cards.get(j).getLevel()==14);
+                        return true;
+                    }    
+                }
+                return false;
+            }
+        }
         return false;
     }
 }

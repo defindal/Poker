@@ -163,12 +163,15 @@ public class RankerIT {
     @org.junit.Test
     public void testIsRoyalFlush() {
         System.out.println("isRoyalFlush");
-        Ranker instance = null;
-        boolean expResult = false;
-        boolean result = instance.isRoyalFlush();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.CLUBS,10));
+        cards.add(new Card(Suit.CLUBS,12));
+        cards.add(new Card(Suit.CLUBS,14));
+        cards.add(new Card(Suit.CLUBS,11));
+        cards.add(new Card(Suit.CLUBS,13));
+        
+        Ranker instance = new Ranker(cards);
+        assertTrue(instance.isRoyalFlush());
     }
     
 }
