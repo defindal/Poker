@@ -244,12 +244,43 @@ public class RankerIT {
     @org.junit.Test
     public void testIsFullHouse() {
         System.out.println("isFullHouse");
-        Ranker instance = null;
-        boolean expResult = false;
-        boolean result = instance.isFullHouse();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.HEARTS,10));
+        cards.add(new Card(Suit.CLUBS,10));
+        cards.add(new Card(Suit.SPADES,10));
+        cards.add(new Card(Suit.HEARTS,7));
+        cards.add(new Card(Suit.DIAMOND,7));
+        
+        Ranker instFH = new Ranker(cards);
+        assertTrue(instFH.isFullHouse());
+    }
+    
+     @org.junit.Test
+    public void testIsFullHouseFalse1() {
+        System.out.println("isNotFullHouse");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.HEARTS,10));
+        cards.add(new Card(Suit.CLUBS,10));
+        cards.add(new Card(Suit.SPADES,10));
+        cards.add(new Card(Suit.HEARTS,8));
+        cards.add(new Card(Suit.DIAMOND,7));
+        
+        Ranker instFHfalse1 = new Ranker(cards);
+        assertFalse(instFHfalse1.isFullHouse());
+    }
+    
+     @org.junit.Test
+    public void testIsFullHouseFalse2() {
+        System.out.println("isFullHouse");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.HEARTS,10));
+        cards.add(new Card(Suit.CLUBS,9));
+        cards.add(new Card(Suit.SPADES,10));
+        cards.add(new Card(Suit.HEARTS,7));
+        cards.add(new Card(Suit.DIAMOND,7));
+        
+        Ranker instFHfalse2 = new Ranker(cards);
+        assertFalse(instFHfalse2.isFullHouse());
     }
 
     /**

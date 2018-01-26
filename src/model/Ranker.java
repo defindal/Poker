@@ -141,11 +141,35 @@ public class Ranker {
         }
         return flush;
     }
-
+    
     public boolean isFullHouse() {
-        return false;
-    }
-
+        boolean fullhouse = true;
+        int count=0;
+        int[] notcount = new int[5];
+        int j = 0;
+        int m=0;
+        for (int i = 0; i < cards.size(); i++)
+        {
+            int a = cards.get(i).getLevel();
+            while (j < cards.size()) {
+                if (cards.get(j).getLevel() == a) {
+                    count++;
+                } else {
+                    notcount[m] = cards.get(j).getLevel();
+                    m++;
+                }
+                j++;
+        }
+        if (count == 3) 
+        {
+            if (notcount[0] == notcount[1]) 
+            {
+                return fullhouse;
+            }
+        }   
+    }return false;
+}
+    
     public boolean isFourOfAKind() {
         for (int i = 0; i < cards.size(); i++) {
             int jumlahsama = 0;
