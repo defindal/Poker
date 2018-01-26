@@ -8,6 +8,9 @@ package model;
 
 import entity.Card;
 import entity.Suit;
+import java.util.ArrayList;
+import java.util.Arrays;
+import static java.util.Collections.list;
 import java.util.List;
 
 /*
@@ -27,6 +30,7 @@ public class Ranker {
      *
      * @return kartu as
      */
+    // Ryan
     public boolean isOnePair() {
         int count = 0;
         boolean check = true;
@@ -47,7 +51,11 @@ public class Ranker {
         }
         return check;
     }
-
+    
+    /*
+    by @april nf
+    */
+    
     public boolean isTwoPairs() {
         boolean isTwoPairs = false;
         int counter = 0;
@@ -63,9 +71,9 @@ public class Ranker {
         }
         return isTwoPairs;
     }
-
+    //taufik
     public boolean isThreeAKind() {
-        int[] arr = new int[5];
+        List<Integer> ls = new ArrayList<>();
         int count = 0;
         for (int i = 0; i < cards.size(); i++) {
             int a = cards.get(i).getLevel();
@@ -75,13 +83,13 @@ public class Ranker {
                 if (cards.get(j).getLevel() == a) {
                     count++;
                 } else {
-                    arr[k] = cards.get(j).getLevel();
+                    ls.add(k, cards.get(j).getLevel());
                     k++;
                 }
                 j++;
             }
             if (count == 3) {
-                if (arr[0] == arr[1]) {
+                if (ls.get(0) == ls.get(1)) {
                     return false;
                 } else {
                     return true;
@@ -90,16 +98,40 @@ public class Ranker {
                 return false;
             } else {
                 count = 0;
-                arr = null;
+                ls.removeAll(ls);
             }
         }
         return false;
     }
-
+    //damar
     public boolean isStraight() {
         return true;
+        List cards = new ArrayList();
+        boolean isStraight = false;
+        cards.add("1");
+        cards.add("2");
+        cards.add("3");
+        cards.add("4");
+        cards.add("5");
+        
+      for(int i = 0, j = i + 1; i < cards.size(); i++){
+            int [] array = new int[cards.size()];
+            array[i] = Integer.valueOf(cards.get(i).toString());
+            Arrays.sort(array);
+                for (int h=0; h<array.length; h++){
+                    System.out.println(array[h]);
+                }
+                    if (array[j] == array[i] + 1)
+                        System.out.println("y");
+                        isStraight = true;
+    }
+        return false;
     }
 
+    /**
+     * isFlush
+     * Yusuf Hanafi Angkat
+     */
     public boolean isFlush() {
         boolean flush = true;
         for (int x = 0; x < 4; x++) {
@@ -109,11 +141,36 @@ public class Ranker {
         }
         return flush;
     }
-
+    
+    //Natan
     public boolean isFullHouse() {
-        return false;
-    }
-
+        boolean fullhouse = true;
+        int count=0;
+        int[] notcount = new int[5];
+        int j = 0;
+        int m=0;
+        for (int i = 0; i < cards.size(); i++)
+        {
+            int a = cards.get(i).getLevel();
+            while (j < cards.size()) {
+                if (cards.get(j).getLevel() == a) {
+                    count++;
+                } else {
+                    notcount[m] = cards.get(j).getLevel();
+                    m++;
+                }
+                j++;
+        }
+        if (count == 3) 
+        {
+            if (notcount[0] == notcount[1]) 
+            {
+                return fullhouse;
+            }
+        }   
+    }return false;
+}
+    //Sigit d'masiv
     public boolean isFourOfAKind() {
         for (int i = 0; i < cards.size(); i++) {
             int jumlahsama = 0;
@@ -130,26 +187,43 @@ public class Ranker {
     }
 
     //Muhammad Donny Setya
-//    public boolean isStraighFlush() {
-//        if(isStraight() && isFlush()){
-//            int i = 0;
-//            int j = 0;
-//            while(i < cards.size()){
-//                if(cards.get(i).getLevel() == 13){
-//                    while(j < cards.size()){
-//                        if(cards.get(j).getLevel() == 14){
-//                           return false; 
-//                        }
-//                     j++;   
-//                    }return true;
-//                }
-//                i++;
-//            }return true;
-//        }
-//        return false;   
-//    }
-
+    public boolean isStraighFlush() {
+        if(isStraight() && isFlush()){
+            int i = 0;
+            int j = 0;
+            while(i < cards.size()){
+                if(cards.get(i).getLevel() == 13){
+                    while(j < cards.size()){
+                        if(cards.get(j).getLevel() == 14){
+                           return false; 
+                        }
+                     j++;   
+                    }return true;
+                }
+                i++;
+            }return true;
+        }
+        return false;   
+    }
+    
+    //Donny Salman
     public boolean isRoyalFlush() {
+        if (isFlush()&&isStraight()) {
+            int i = 0;
+            int j = 0;
+            while (i < cards.size()) {
+                if (cards.get(i).getLevel() == 13) {
+                    while (j < cards.size()) {
+                        if (cards.get(j).getLevel() == 14) {
+                            return true;
+                        }
+                        j++;
+                    } return false;
+                }
+                i++;
+            }
+            return false;
+        }
         return false;
     }
 }
