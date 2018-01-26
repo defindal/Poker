@@ -275,7 +275,7 @@ public class RankerIT {
         System.out.println("isFullHouse");
         List<Card> cards = new ArrayList<Card>();
         cards.add(new Card(Suit.HEARTS,10));
-        cards.add(new Card(Suit.CLUBS,8));
+        cards.add(new Card(Suit.CLUBS,9));
         cards.add(new Card(Suit.SPADES,10));
         cards.add(new Card(Suit.HEARTS,7));
         cards.add(new Card(Suit.DIAMOND,7));
