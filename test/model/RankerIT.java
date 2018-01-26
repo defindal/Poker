@@ -106,15 +106,36 @@ public class RankerIT {
         cards.add(new Card(Suit.CLUBS,11));
         cards.add(new Card(Suit.DIAMOND,11));
         cards.add(new Card(Suit.SPADES,11));
-        cards.add(new Card(Suit.HEARTS,3));
-        cards.add(new Card(Suit.SPADES,3));
-        Ranker instance = new Ranker(cards);
-        assertTrue(instance.isThreeAKind());
-//        boolean expResult = false;
-//        boolean result = instance.isThreeAKind();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+        cards.add(new Card(Suit.HEARTS,6));
+        cards.add(new Card(Suit.SPADES,1));
+        Ranker instance3kindt = new Ranker(cards);
+        assertTrue(instance3kindt.isThreeAKind());
+    }
+    
+    @org.junit.Test
+    public void testIsThreeAKindFalse1() {
+        System.out.println("isThreeAKind");
+        List<Card> cards1 = new ArrayList<Card>();
+        cards1.add(new Card(Suit.CLUBS,3));
+        cards1.add(new Card(Suit.DIAMOND,6));
+        cards1.add(new Card(Suit.SPADES,3));
+        cards1.add(new Card(Suit.HEARTS,6));
+        cards1.add(new Card(Suit.DIAMOND,3));
+        Ranker instance3kindf = new Ranker(cards1);
+        assertFalse(instance3kindf.isThreeAKind());
+    }
+    
+    @org.junit.Test
+    public void testIsThreeAKindFalse2() {
+        System.out.println("isThreeAKind");
+        List<Card> cards2 = new ArrayList<Card>();
+        cards2.add(new Card(Suit.CLUBS,5));
+        cards2.add(new Card(Suit.DIAMOND,2));
+        cards2.add(new Card(Suit.SPADES,13));
+        cards2.add(new Card(Suit.HEARTS,13));
+        cards2.add(new Card(Suit.DIAMOND,10));
+        Ranker instance3kindf2 = new Ranker(cards2);
+        assertFalse(instance3kindf2.isThreeAKind());
     }
 
     /**
