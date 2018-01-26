@@ -65,11 +65,6 @@ public class Ranker {
     Method isTwoPairs untuk membaca kartu apakah termasuk kategori Two pairs yaitu
     kartu yang mempunyai dua pasang sama 
      */
-      
-=======
-    */
-    
->>>>>>> 2fdc2498096440f42985f3ad258d440b4ba3d29a
     public boolean isTwoPairs() {
         boolean isTwoPairs = false;
         int counter = 0;

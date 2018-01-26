@@ -115,7 +115,6 @@ public class RankerIT {
 
         List<Card> cards2 = new ArrayList<Card>();
         System.out.println("isTwoPairs (Case False 1)");
-<<<<<<< HEAD
         cards2.add(new Card(Suit.DIAMOND, 7));
         cards2.add(new Card(Suit.SPADES, 7));
         cards2.add(new Card(Suit.HEARTS, 8));
@@ -143,7 +142,6 @@ public class RankerIT {
         cards4.add(new Card(Suit.HEARTS, 2));
         Ranker instance4 = new Ranker(cards4);
         assertFalse(instance4.isTwoPairs());
-=======
         cards.add(new Card(Suit.DIAMOND, 7));
         cards.add(new Card(Suit.SPADES, 7));
         cards.add(new Card(Suit.HEARTS, 8));
@@ -152,24 +150,6 @@ public class RankerIT {
 
         assertFalse(instancetwopairs.isTwoPairs());
 
-        System.out.println("isTwoPairs (Case False 2)");
-        cards.add(new Card(Suit.CLUBS, 1));
-        cards.add(new Card(Suit.HEARTS, 4));
-        cards.add(new Card(Suit.DIAMOND, 6));
-        cards.add(new Card(Suit.DIAMOND, 2));
-        cards.add(new Card(Suit.SPADES, 4));
-
-        assertFalse(instancetwopairs.isTwoPairs());
-
-        System.out.println("isTwoPairs (Case False 3)");
-        cards.add(new Card(Suit.HEARTS, 1));
-        cards.add(new Card(Suit.HEARTS, 5));
-        cards.add(new Card(Suit.HEARTS, 3));
-        cards.add(new Card(Suit.HEARTS, 4));
-        cards.add(new Card(Suit.HEARTS, 2));
-
-        assertFalse(instancetwopairs.isTwoPairs());
->>>>>>> 2fdc2498096440f42985f3ad258d440b4ba3d29a
     }
 
     /**
@@ -181,7 +161,6 @@ public class RankerIT {
         cards.add(new Card(Suit.CLUBS,11));
         cards.add(new Card(Suit.DIAMOND,11));
         cards.add(new Card(Suit.SPADES,11));
-<<<<<<< HEAD
         cards.add(new Card(Suit.HEARTS,3));
         cards.add(new Card(Suit.SPADES,3));
         assertTrue(instance.isThreeAKind());
@@ -191,7 +170,6 @@ public class RankerIT {
 //        // TODO review the generated test code and remove the default call to fail.
 
 //        fail("The test case is a prototype.");
-=======
         cards.add(new Card(Suit.HEARTS,6));
         cards.add(new Card(Suit.SPADES,1));
         Ranker instance3kindt = new Ranker(cards);
@@ -227,7 +205,6 @@ public class RankerIT {
         cards2.add(new Card(Suit.DIAMOND,10));
         Ranker instance3kindf2 = new Ranker(cards2);
         assertFalse(instance3kindf2.isThreeAKind());
->>>>>>> 2fdc2498096440f42985f3ad258d440b4ba3d29a
     }
 
     /**
@@ -236,7 +213,6 @@ public class RankerIT {
     @org.junit.Test
     public void testIsStraight() {
         System.out.println("isStraight");
-<<<<<<< HEAD
         List<Card> cards = new ArrayList<Card>();
         cards.add(new Card(Suit.HEARTS,1));
         cards.add(new Card(Suit.HEARTS,2));
@@ -245,13 +221,12 @@ public class RankerIT {
         cards.add(new Card(Suit.DIAMOND,5));
         Ranker instance3 = new Ranker(cards);
         assertTrue(instance3.isStraight());
-=======
         Ranker instance = null;
         boolean expResult = false;
         boolean result = instance.isStraight();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
->>>>>>> 2fdc2498096440f42985f3ad258d440b4ba3d29a
+
     }
 
     /**
@@ -330,7 +305,6 @@ public class RankerIT {
         cards.add(new Card(Suit.HEARTS,10));
         cards.add(new Card(Suit.CLUBS,9));
         cards.add(new Card(Suit.SPADES,10));
-<<<<<<< HEAD
         assertTrue(instance.isFourOfAKind());
 //        Ranker instance = null;
 //        boolean expResult = false;
@@ -339,13 +313,11 @@ public class RankerIT {
 //        // TODO review the generated test code and remove the default call to fail.
 
 //        fail("The test case is a prototype.");
-=======
         cards.add(new Card(Suit.HEARTS,7));
         cards.add(new Card(Suit.DIAMOND,7));
         
         Ranker instFHfalse2 = new Ranker(cards);
         assertFalse(instFHfalse2.isFullHouse());
->>>>>>> 2fdc2498096440f42985f3ad258d440b4ba3d29a
     }
 
     /**
