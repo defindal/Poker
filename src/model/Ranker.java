@@ -50,8 +50,19 @@ public class Ranker {
     }
 
     public boolean isTwoPairs() {
-
-        return false;
+        boolean isTwoPairs = false;
+        int counter = 0;
+        for (int i = 0, j = i + 1; i < cards.size(); i++) {
+            if (cards.get(i) == cards.get(j)) {
+                counter++;
+                if (counter > 2 || counter < 2) {
+                    isTwoPairs = false;
+                } else {
+                    isTwoPairs = true;
+                }
+            }
+        }
+        return isTwoPairs;
     }
 
     public boolean isThreeAKind() {
