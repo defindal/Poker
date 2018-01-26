@@ -30,8 +30,22 @@ public class Ranker {
      * @return kartu as
      */
     public boolean isOnePair(){
-        String aaa;
-        return false;
+        int count=0;
+        boolean check=true;
+        for (int i = 0; i < cards.size() ; i++) {
+            for (int j = i+1; j< cards.size(); j++) {
+                if (cards.get(i)==cards.get(j)) {
+                    count++;
+                    
+                    if(count > 1) return false;
+                }
+            }
+            
+        }
+        if (count!=1) {
+            check=false;
+        }
+        return check;
     }
     
     public boolean isTwoPairs(){
