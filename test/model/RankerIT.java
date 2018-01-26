@@ -83,7 +83,6 @@ public class RankerIT {
         boolean result = instance.isTwoPairs();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -118,7 +117,6 @@ public class RankerIT {
         boolean result = instance.isStraight();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -149,7 +147,6 @@ public class RankerIT {
         boolean result = instance.isFullHouse();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -178,15 +175,45 @@ public class RankerIT {
      * Test of isStraighFlush method, of class Ranker.
      */
     @org.junit.Test
-    public void testIsStraighFlush() {
+    public void testIsStraighFlushTrue() {
         System.out.println("isStraighFlush");
-        Ranker instance = null;
-        boolean expResult = false;
-        boolean result = instance.isStraighFlush();
-        assertEquals(expResult, result);
+        List<Card> cards1 = new ArrayList<Card>();
+        cards1.add(new Card(Suit.SPADES,4));
+        cards1.add(new Card(Suit.SPADES,5));
+        cards1.add(new Card(Suit.SPADES,6));
+        cards1.add(new Card(Suit.SPADES,7));
+        cards1.add(new Card(Suit.SPADES,8));
+        Ranker instance1 = new Ranker(cards1);
+        assertTrue(instance1.isStraighFlush());
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
+    @org.junit.Test
+    public void testIsStraighFlushFalse() {
+        System.out.println("isStraighFlush");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.HEARTS,4));
+        cards.add(new Card(Suit.SPADES,5));
+        cards.add(new Card(Suit.DIAMOND,6));
+        cards.add(new Card(Suit.SPADES,7));
+        cards.add(new Card(Suit.SPADES,8));
+        Ranker instance = new Ranker(cards);
+        assertFalse(instance.isStraighFlush());
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    @org.junit.Test
+    public void testIsStraighFlushFalse2() {
+        System.out.println("isStraighFlush");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.CLUBS,4));
+        cards.add(new Card(Suit.SPADES,5));
+        cards.add(new Card(Suit.DIAMOND,6));
+        cards.add(new Card(Suit.SPADES,7));
+        cards.add(new Card(Suit.DIAMOND,8));
+        Ranker instance = new Ranker(cards);
+        assertFalse(instance.isStraighFlush());
+        // TODO review the generated test code and remove the default call to fail.
+    }
+
 
     /**
      * Test of isRoyalFlush method, of class Ranker.
@@ -199,7 +226,6 @@ public class RankerIT {
         boolean result = instance.isRoyalFlush();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

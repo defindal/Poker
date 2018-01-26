@@ -93,37 +93,14 @@ public class Ranker {
                 arr = null;
             }
         }
-
-    public Ranker(List<Card> cards) {
-        if (cards.size() == 5) {
-            this.cards = cards;
-        }
-    }
-
-    public boolean isOnePair() {
-        return false;
-    }
-
-    public boolean isTwoPairs() {
-        return false;
-    }
-
-    public boolean isThreeAKind() {
         return false;
     }
 
     public boolean isStraight() {
-<<<<<<< HEAD
-        
-=======
->>>>>>> 47d2a39f2b39a24b4fc5f61fe3ff783bed076a88
-        return false;
+        return true;
     }
 
     public boolean isFlush() {
-<<<<<<< HEAD
-        return false;
-=======
         boolean flush = true;
         for (int x = 0; x < 4; x++) {
             if (cards.get(x).getSuit() != cards.get(x + 1).getSuit()) {
@@ -131,7 +108,6 @@ public class Ranker {
             }
         }
         return flush;
->>>>>>> 47d2a39f2b39a24b4fc5f61fe3ff783bed076a88
     }
 
     public boolean isFullHouse() {
@@ -153,14 +129,25 @@ public class Ranker {
         return false;
     }
 
-    public boolean isStraighFlush() {
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> 47d2a39f2b39a24b4fc5f61fe3ff783bed076a88
-        return false;
-    }
+    //Muhammad Donny Setya
+//    public boolean isStraighFlush() {
+//        if(isStraight() && isFlush()){
+//            int i = 0;
+//            int j = 0;
+//            while(i < cards.size()){
+//                if(cards.get(i).getLevel() == 13){
+//                    while(j < cards.size()){
+//                        if(cards.get(j).getLevel() == 14){
+//                           return false; 
+//                        }
+//                     j++;   
+//                    }return true;
+//                }
+//                i++;
+//            }return true;
+//        }
+//        return false;   
+//    }
 
     public boolean isRoyalFlush() {
         return false;
