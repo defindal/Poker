@@ -34,7 +34,7 @@ public class Ranker {
         boolean check=true;
         for (int i = 0; i < cards.size() ; i++) {
             for (int j = i+1; j< cards.size(); j++) {
-                if (cards.get(i)==cards.get(j)) {
+                if (cards.get(i).getLevel()==cards.get(j).getLevel()) {
                     count++;
                     
                     if(count > 1) return false;
@@ -97,7 +97,7 @@ public class Ranker {
         boolean flush = true;
         for (int x = 0; x < 4; x++) {
             if (cards.get(x).getSuit() != cards.get(x + 1).getSuit()) {
-                flush = false;
+                return false;
             }
         }
         return flush;
@@ -108,6 +108,17 @@ public class Ranker {
     }
 
     public boolean isFourOfAKind() {
+        for (int i = 0; i < cards.size(); i++) {
+            int jumlahsama= 0;
+            for (int j = 0; j < cards.size() ; j++) {
+                if (cards.get(i).getLevel()==cards.get(j).getLevel()) {
+                    jumlahsama ++;
+                }
+            }
+            if (jumlahsama == 4) {
+                return true;
+            }
+        }
         return false;
     }
 
