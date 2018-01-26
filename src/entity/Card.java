@@ -13,6 +13,16 @@ public class Card {
     private Suit suit;
     private int level;
     
+    public Card(Suit suit, int level){
+        this.suit = suit;
+        this.level = level;
+    }
     
-    
+    public int getLevel() {
+        return level;
+    }
+
+    public Suit getSuit() {
+        return suit;
+    }   
 }
