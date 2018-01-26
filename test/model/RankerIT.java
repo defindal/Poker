@@ -97,7 +97,7 @@ public class RankerIT {
         cards.add(new Card(Suit.DIAMOND,11));
         cards.add(new Card(Suit.SPADES,11));
         cards.add(new Card(Suit.HEARTS,3));
-        cards.add(new Card(Suit.DIAMOND,10));
+        cards.add(new Card(Suit.SPADES,3));
         Ranker instance = new Ranker(cards);
         assertTrue(instance.isThreeAKind());
 //        boolean expResult = false;

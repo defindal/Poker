@@ -8,6 +8,7 @@ package model;
 
 import entity.Card;
 import entity.Suit;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -66,7 +67,7 @@ public class Ranker {
     }
 
     public boolean isThreeAKind() {
-        int[] arr = new int[5];
+        List<Integer> ls = new ArrayList<>();
         int count = 0;
         for (int i = 0; i < cards.size(); i++) {
             int a = cards.get(i).getLevel();
@@ -76,13 +77,13 @@ public class Ranker {
                 if (cards.get(j).getLevel() == a) {
                     count++;
                 } else {
-                    arr[k] = cards.get(j).getLevel();
-                    k++;
+                      ls.add(k, cards.get(j).getLevel());
+                      k++;
                 }
                 j++;
             }
             if (count == 3) {
-                if (arr[0] == arr[1]) {
+                if (ls.get(0) == ls.get(1)){
                     return false;
                 } else {
                     return true;
@@ -91,7 +92,7 @@ public class Ranker {
                 return false;
             } else {
                 count = 0;
-                arr = null;
+                ls.removeAll(ls);
             }
         }
         return false;
