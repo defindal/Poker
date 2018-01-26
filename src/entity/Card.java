@@ -45,12 +45,12 @@ public class Card {
         this.suit = suit;
         this.level = level;
     }
-    
-    public int getLevel() {
-        return level;
-    }
-
-    public Suit getSuit() {
-        return suit;
-    }   
+//    
+//    public int getLevel() {
+//        return level;
+//    }
+//
+//    public Suit getSuit() {
+//        return suit;
+//    }   
 }
