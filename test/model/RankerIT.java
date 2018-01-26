@@ -50,6 +50,19 @@ public class RankerIT {
         List<Card> cards = new ArrayList<Card>();
         cards.add(new Card(Suit.CLUBS,10));
         cards.add(new Card(Suit.DIAMOND,10));
+        cards.add(new Card(Suit.SPADES,1));
+        cards.add(new Card(Suit.HEARTS,11));
+        cards.add(new Card(Suit.CLUBS,7));
+        
+        Ranker instance = new Ranker(cards);
+        assertTrue(instance.isOnePair());
+        
+    }
+    public void testIsOnePairFalse1() {
+        System.out.println("isNotOnePair");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.CLUBS,10));
+        cards.add(new Card(Suit.DIAMOND,10));
         cards.add(new Card(Suit.SPADES,10));
         cards.add(new Card(Suit.HEARTS,11));
         cards.add(new Card(Suit.CLUBS,7));
