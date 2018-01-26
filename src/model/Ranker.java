@@ -7,6 +7,7 @@
 package model;
 
 import entity.Card;
+import entity.Suit;
 import java.util.List;
 
 /**
@@ -14,53 +15,61 @@ import java.util.List;
  * @author deph
  */
 public class Ranker {
+
     private List<Card> cards;
-    
-    public Ranker(List<Card> cards){
-        if(cards.size() == 5) this.cards = cards;
+
+    public Ranker(List<Card> cards) {
+        if (cards.size() == 5) {
+            this.cards = cards;
+        }
     }
-    
+
     /**
-     * 
+     *
      * @return kartu as
      */
-    public boolean isOnePair(){
-        
+    public boolean isOnePair() {
+
         return false;
     }
-    
-    public boolean isTwoPairs(){
-        
+
+    public boolean isTwoPairs() {
+
         return false;
     }
-    
-    public boolean isThreeAKind(){
-    
+
+    public boolean isThreeAKind() {
+
         return false;
     }
-    
-    public boolean isStraight(){
+
+    public boolean isStraight() {
         return false;
     }
-    
-    public boolean isFlush(){
-        
+
+    public boolean isFlush() {
+        boolean flush = true;
+        for (int x = 0; x < 4; x++) {
+            if (cards.get(x).getSuit() != cards.get(x + 1).getSuit()) {
+                flush = false;
+            }
+        }
+        return flush;
+    }
+
+    public boolean isFullHouse() {
         return false;
     }
-     
-      public boolean isFullHouse(){
+
+    public boolean isFourOfAKind() {
         return false;
     }
-    
-    public boolean isFourOfAKind(){
+
+    public boolean isStraighFlush() {
         return false;
     }
-    
-    public boolean isStraighFlush(){
-        return false;
-    }
-    
-    public boolean isRoyalFlush(){
+
+    public boolean isRoyalFlush() {
         return false;
     }
 }
