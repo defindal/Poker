@@ -142,7 +142,7 @@ public class RankerIT {
     }
 
     /**
-     * Test of isThreeAKind method, of class Ranker.
+     * Test of isThreeAKind method untuk test jika card memiliki value tiga kartu dengan level yang sama, of class Ranker.
      */
     @org.junit.Test
     public void testIsThreeAKind() {
@@ -156,6 +156,9 @@ public class RankerIT {
         assertTrue(instance3kindt.isThreeAKind());
     }
     
+    /**
+     * Test of isThreeAKind method untuk test jika card memiliki value tiga kartu dengan level yang sama dikombinasikan dengan dua kartu dengan level yang sama, of class Ranker.
+     */
     @org.junit.Test
     public void testIsThreeAKindFalse1() {       
         List<Card> cards1 = new ArrayList<Card>();
@@ -168,6 +171,9 @@ public class RankerIT {
         assertFalse(instance3kindf.isThreeAKind());
     }
     
+    /**
+     * Test of isThreeAKind method untuk test jika card tidak memiliki value tiga kartu dengan level yang sama, of class Ranker.
+     */
     @org.junit.Test
     public void testIsThreeAKindFalse2() {
         System.out.println("isThreeAKind");

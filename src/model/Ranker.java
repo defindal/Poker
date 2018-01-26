@@ -71,7 +71,10 @@ public class Ranker {
         }
         return isTwoPairs;
     }
-    //taufik
+    /**
+     * Method untuk return true jika list kartu yang memiliki tiga kartu dengan level yang sama
+     * @return true or false
+     */
     public boolean isThreeAKind() {
         List<Integer> ls = new ArrayList<>();
         int count = 0;
@@ -105,7 +108,7 @@ public class Ranker {
     }
     //damar
     public boolean isStraight() {
-        return true;
+//        return true;
         List cards = new ArrayList();
         boolean isStraight = false;
         cards.add("1");
