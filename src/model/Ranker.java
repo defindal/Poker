@@ -29,6 +29,7 @@ public class Ranker {
      *
      * @return kartu as
      */
+    // Ryan
     public boolean isOnePair() {
         int count = 0;
         boolean check = true;
