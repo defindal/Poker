@@ -36,6 +36,8 @@ public class Ranker {
             for (int j = i+1; j< cards.size(); j++) {
                 if (cards.get(i)==cards.get(j)) {
                     count++;
+                    
+                    if(count > 1) return false;
                 }
             }
             
