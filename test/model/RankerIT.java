@@ -5,6 +5,10 @@
  */
 package model;
 
+import entity.Card;
+import entity.Suit;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -40,21 +44,25 @@ public class RankerIT {
     /**
      * Test of isOnePair method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsOnePair() {
         System.out.println("isOnePair");
-        Ranker instance = null;
-        boolean expResult = false;
-        boolean result = instance.isOnePair();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.CLUBS,10));
+        cards.add(new Card(Suit.DIAMOND,10));
+        cards.add(new Card(Suit.SPADES,10));
+        cards.add(new Card(Suit.HEARTS,11));
+        cards.add(new Card(Suit.CLUBS,7));
+        
+        Ranker instance = new Ranker(cards);
+        assertTrue(instance.isOnePair());
+        
     }
 
     /**
      * Test of isTwoPairs method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsTwoPairs() {
         System.out.println("isTwoPairs");
         Ranker instance = null;
@@ -68,7 +76,7 @@ public class RankerIT {
     /**
      * Test of isThreeAKind method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsThreeAKind() {
         System.out.println("isThreeAKind");
         Ranker instance = null;
@@ -82,7 +90,7 @@ public class RankerIT {
     /**
      * Test of isStraight method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsStraight() {
         System.out.println("isStraight");
         Ranker instance = null;
@@ -96,7 +104,7 @@ public class RankerIT {
     /**
      * Test of isFlush method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsFlush() {
         System.out.println("isFlush");
         Ranker instance = null;
@@ -110,7 +118,7 @@ public class RankerIT {
     /**
      * Test of isFullHouse method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsFullHouse() {
         System.out.println("isFullHouse");
         Ranker instance = null;
@@ -124,7 +132,7 @@ public class RankerIT {
     /**
      * Test of isFourOfAKind method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsFourOfAKind() {
         System.out.println("isFourOfAKind");
         Ranker instance = null;
@@ -138,7 +146,7 @@ public class RankerIT {
     /**
      * Test of isStraighFlush method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsStraighFlush() {
         System.out.println("isStraighFlush");
         Ranker instance = null;
@@ -152,7 +160,7 @@ public class RankerIT {
     /**
      * Test of isRoyalFlush method, of class Ranker.
      */
-    @Test
+    @org.junit.Test
     public void testIsRoyalFlush() {
         System.out.println("isRoyalFlush");
         Ranker instance = null;

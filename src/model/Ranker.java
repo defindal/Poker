@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,6 +7,7 @@
 package model;
 
 import entity.Card;
+import entity.Suit;
 import java.util.List;
 
 /*
@@ -14,6 +16,61 @@ import java.util.List;
 public class Ranker {
 
     private List<Card> cards;
+
+    public Ranker(List<Card> cards) {
+        if (cards.size() == 5) {
+            this.cards = cards;
+        }
+    } 
+    
+    /**
+     *
+     * @return kartu as
+     */
+
+    public boolean isOnePair(){
+        int count=0;
+        boolean check=true;
+        for (int i = 0; i < cards.size() ; i++) {
+            for (int j = i+1; j< cards.size(); j++) {
+                if (cards.get(i)==cards.get(j)) {
+                    count++;
+                    
+                    if(count > 1) return false;
+                }
+            }
+            
+        }
+        if (count!=1) {
+            check=false;
+        }
+        return check;
+    }
+
+    public boolean isTwoPairs() {
+
+        return false;
+    }
+
+    public boolean isThreeAKind(){
+        int count = 0;
+        for (int i = 0; i < cards.size(); i++) {
+            int a = cards.get(i).getLevel();
+            int j = 0;
+            while (j < cards.size()) {
+                if (cards.get(j).getLevel() == a) {
+                    count++;
+                }
+                j++;
+            }
+            if (count == 3) {
+                return true;
+            } else if (count == 2){
+                return false;
+            } else {
+                count = 0;
+            }
+        }
 
     public Ranker(List<Card> cards) {
         if (cards.size() == 5) {
@@ -34,12 +91,25 @@ public class Ranker {
     }
 
     public boolean isStraight() {
+<<<<<<< HEAD
         
+=======
+>>>>>>> 47d2a39f2b39a24b4fc5f61fe3ff783bed076a88
         return false;
     }
 
     public boolean isFlush() {
+<<<<<<< HEAD
         return false;
+=======
+        boolean flush = true;
+        for (int x = 0; x < 4; x++) {
+            if (cards.get(x).getSuit() != cards.get(x + 1).getSuit()) {
+                flush = false;
+            }
+        }
+        return flush;
+>>>>>>> 47d2a39f2b39a24b4fc5f61fe3ff783bed076a88
     }
 
     public boolean isFullHouse() {
@@ -51,7 +121,11 @@ public class Ranker {
     }
 
     public boolean isStraighFlush() {
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 47d2a39f2b39a24b4fc5f61fe3ff783bed076a88
         return false;
     }
 
