@@ -17,35 +17,18 @@ import java.util.List;
 public class Ranker {
 
     private List<Card> cards;
-<<<<<<< HEAD
 
     public Ranker(List<Card> cards) {
         if (cards.size() == 5) {
             this.cards = cards;
         }
-    }
-
-=======
+    } 
     
-    public Ranker(List<Card> cards){
-        if(cards.size() == 5) {
-            this.cards = cards;
-        }
-    }
-    /**
-     * cobaaaa
-     */
-    
->>>>>>> a9cb1e6b879cabc69ac790f26f1f8bdb4561d4b7
     /**
      *
      * @return kartu as
      */
-<<<<<<< HEAD
-    public boolean isOnePair() {
 
-        return false;
-=======
     public boolean isOnePair(){
         int count=0;
         boolean check=true;
@@ -63,19 +46,13 @@ public class Ranker {
             check=false;
         }
         return check;
->>>>>>> a9cb1e6b879cabc69ac790f26f1f8bdb4561d4b7
     }
 
     public boolean isTwoPairs() {
 
         return false;
     }
-<<<<<<< HEAD
 
-    public boolean isThreeAKind() {
-
-=======
-    
     public boolean isThreeAKind(){
         int count = 0;
         for (int i = 0; i < cards.size(); i++) {
@@ -95,7 +72,6 @@ public class Ranker {
                 count = 0;
             }
         }
->>>>>>> a9cb1e6b879cabc69ac790f26f1f8bdb4561d4b7
         return false;
     }
 

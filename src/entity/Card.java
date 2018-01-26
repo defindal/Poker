@@ -10,7 +10,14 @@ package entity;
  * @author deph
  */
 public class Card {
-
+    
+    private Suit suit;
+    private int level;
+    
+    public Card(Suit suit, int level){
+        this.suit = suit;
+        this.level = level;
+    }
     /**
      * @return the suit
      */
@@ -37,20 +44,5 @@ public class Card {
      */
     public void setLevel(int level) {
         this.level = level;
-    }
-    private Suit suit;
-    private int level;
-    
-    public Card(Suit suit, int level){
-        this.suit = suit;
-        this.level = level;
-    }
-//    
-//    public int getLevel() {
-//        return level;
-//    }
-//
-//    public Suit getSuit() {
-//        return suit;
-//    }   
+    }  
 }
