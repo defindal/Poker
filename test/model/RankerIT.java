@@ -284,7 +284,11 @@ public class RankerIT {
     }
 
     /**
-     * Test of isFourOfAKind method, of class Ranker.
+     * method fourofkind akan menghasilkan nilai True dan False
+     * method ini akan mengeluarkan nilai True Jika 4 dari total semua kartu (5) sama level.
+     * @return True
+     * method ini akan mengeluarkan nilai False . Jika tidak memenuhi syarat .
+     * by: Sigit Yudhianto
      */
     @org.junit.Test
     public void testIsFourOfAKindTrue() {
