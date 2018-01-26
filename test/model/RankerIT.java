@@ -291,7 +291,7 @@ public class RankerIT {
         cardsT.add(new Card(Suit.SPADES,6));
         Ranker instanceT = new Ranker(cardsT);
         assertTrue(instanceT.isFourOfAKind());
-        
+         
     }
     
     @org.junit.Test

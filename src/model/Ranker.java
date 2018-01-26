@@ -105,7 +105,6 @@ public class Ranker {
     }
     //damar
     public boolean isStraight() {
-        return true;
         List cards = new ArrayList();
         boolean isStraight = false;
         cards.add("1");
