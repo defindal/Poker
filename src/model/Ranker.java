@@ -78,13 +78,13 @@ public class Ranker {
                 if (cards.get(j).getLevel() == a) {
                     count++;
                 } else {
-                      ls.add(k, cards.get(j).getLevel());
-                      k++;
+                    ls.add(k, cards.get(j).getLevel());
+                    k++;
                 }
                 j++;
             }
             if (count == 3) {
-                if (ls.get(0) == ls.get(1)){
+                if (ls.get(0) == ls.get(1)) {
                     return false;
                 } else {
                     return true;
@@ -100,7 +100,7 @@ public class Ranker {
     }
 
     public boolean isStraight() {
-        return false;
+        return true;
     }
 
     public boolean isFlush() {
@@ -137,16 +137,21 @@ public class Ranker {
     }
 
     public boolean isRoyalFlush() {
-        if (isFlush()&&isStraight()){
-            for (int i = 0 ; i<cards.size();i++){
-                if (cards.get(i).getLevel()==13){
-                    for (int j=0; j<cards.size();j++){
-                        if (cards.get(j).getLevel()==14);
-                        return true;
-                    }    
+        if (isFlush()&&isStraight()) {
+            int i = 0;
+            int j = 0;
+            while (i < cards.size()) {
+                if (cards.get(i).getLevel() == 13) {
+                    while (j < cards.size()) {
+                        if (cards.get(j).getLevel() == 14) {
+                            return true;
+                        }
+                        j++;
+                    } return false;
                 }
-                return false;
+                i++;
             }
+            return false;
         }
         return false;
     }

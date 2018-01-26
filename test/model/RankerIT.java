@@ -205,14 +205,14 @@ public class RankerIT {
     public void testIsRoyalFlush() {
         System.out.println("isRoyalFlush");
         List<Card> cards = new ArrayList<Card>();
-        cards.add(new Card(Suit.CLUBS,10));
+        cards.add(new Card(Suit.CLUBS,13));
         cards.add(new Card(Suit.CLUBS,12));
         cards.add(new Card(Suit.CLUBS,14));
         cards.add(new Card(Suit.CLUBS,11));
-        cards.add(new Card(Suit.CLUBS,13));
+        cards.add(new Card(Suit.CLUBS,10));
         
-        Ranker instance = new Ranker(cards);
-        assertTrue(instance.isRoyalFlush());
+        Ranker instanceRoyalFlush = new Ranker(cards);
+        assertTrue(instanceRoyalFlush.isRoyalFlush());
     }
     
 }
