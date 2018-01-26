@@ -9,6 +9,8 @@ package model;
 import entity.Card;
 import entity.Suit;
 import java.util.ArrayList;
+import java.util.Arrays;
+import static java.util.Collections.list;
 import java.util.List;
 
 /**
@@ -50,6 +52,10 @@ public class Ranker {
         }
         return check;
     }
+    
+    /*
+    by @april nf
+    */
 
     public boolean isTwoPairs() {
         boolean isTwoPairs = false;
@@ -100,9 +106,32 @@ public class Ranker {
     }
 
     public boolean isStraight() {
+        List cards = new ArrayList();
+        boolean isStraight = false;
+        cards.add("1");
+        cards.add("2");
+        cards.add("3");
+        cards.add("4");
+        cards.add("5");
+        
+      for(int i = 0, j = i + 1; i < cards.size(); i++){
+            int [] array = new int[cards.size()];
+            array[i] = Integer.valueOf(cards.get(i).toString());
+            Arrays.sort(array);
+                for (int h=0; h<array.length; h++){
+                    System.out.println(array[h]);
+                }
+                    if (array[j] == array[i] + 1)
+                        System.out.println("y");
+                        isStraight = true;
+    }
         return false;
     }
 
+    /**
+     * isFlush
+     * Yusuf Hanafi Angkat
+     */
     public boolean isFlush() {
         boolean flush = true;
         for (int x = 0; x < 4; x++) {
