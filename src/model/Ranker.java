@@ -31,11 +31,12 @@ public class Ranker {
      *
      * @return kartu as
      */
-    /**
+    /*
      * 
      * isOnePair merupakan menentukan sepasang kartu yang sama. Method isOnePair memerlukan variabel count untuk mengukur pasang kartu yang sama.
      * Kartu akan dibandingkan menggunakan perulangan. Variabel count akan bertambah jika ada kartu yang sama. 
      * Jika variabel count lebih dari 1 maka return false dan perulangan dihentikan. Jika count sama dengan 0 maka return akan false.
+     * By Ryan
      */
     public boolean isOnePair() {
         int count = 0;
@@ -84,7 +85,10 @@ public class Ranker {
         }
         return isTwoPairs;
     }
-    //taufik
+    /**
+     * Method untuk return true jika list kartu yang memiliki tiga kartu dengan level yang sama
+     * @return true or false
+     */
     public boolean isThreeAKind() {
         List<Integer> ls = new ArrayList<>();
         int count = 0;
