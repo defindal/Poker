@@ -102,12 +102,19 @@ public class RankerIT {
     @org.junit.Test
     public void testIsThreeAKind() {
         System.out.println("isThreeAKind");
-        Ranker instance = null;
-        boolean expResult = false;
-        boolean result = instance.isThreeAKind();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.CLUBS,11));
+        cards.add(new Card(Suit.DIAMOND,11));
+        cards.add(new Card(Suit.SPADES,11));
+        cards.add(new Card(Suit.HEARTS,3));
+        cards.add(new Card(Suit.DIAMOND,10));
+        Ranker instance = new Ranker(cards);
+        assertTrue(instance.isThreeAKind());
+//        boolean expResult = false;
+//        boolean result = instance.isThreeAKind();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
     }
 
     /**
@@ -161,12 +168,20 @@ public class RankerIT {
     @org.junit.Test
     public void testIsFourOfAKind() {
         System.out.println("isFourOfAKind");
-        Ranker instance = null;
-        boolean expResult = false;
-        boolean result = instance.isFourOfAKind();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(Suit.CLUBS,10));
+        cards.add(new Card(Suit.DIAMOND,10));
+        cards.add(new Card(Suit.SPADES,7));
+        cards.add(new Card(Suit.HEARTS,10));
+        cards.add(new Card(Suit.SPADES,10));
+        Ranker instance = new Ranker(cards);
+        assertTrue(instance.isFourOfAKind());
+//        Ranker instance = null;
+//        boolean expResult = false;
+//        boolean result = instance.isFourOfAKind();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
     }
 
     /**
