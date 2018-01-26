@@ -18,7 +18,6 @@ public class Card {
         this.level = level;
     }
     
-<<<<<<< HEAD
     public int getLevel() {
         return level;
     }
@@ -26,7 +25,4 @@ public class Card {
     public Suit getSuit() {
         return suit;
     }   
-=======
-
->>>>>>> 9a3755dfaae9d2586675ed694a055db902c5e43e
 }
