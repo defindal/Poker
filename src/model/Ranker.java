@@ -105,7 +105,7 @@ public class Ranker {
     }
     //damar
     public boolean isStraight() {
-        return true;
+//        return true;
         List cards = new ArrayList();
         boolean isStraight = false;
         cards.add("1");
@@ -170,7 +170,14 @@ public class Ranker {
         }   
     }return false;
 }
-    //Sigit d'masiv
+    /**
+     * method fourofkind akan menghasilkan nilai True dan False
+     * method ini akan mengeluarkan nilai True Jika 4 dari total semua kartu (5) sama level.
+     * @return True
+     * method ini akan mengeluarkan nilai False . Jika tidak memenuhi syarat .
+     *
+     * by: Sigit Yudhianto
+     */
     public boolean isFourOfAKind() {
         for (int i = 0; i < cards.size(); i++) {
             int jumlahsama = 0;
