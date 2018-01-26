@@ -14,8 +14,7 @@ import java.util.Collections;
 import static java.util.Collections.list;
 import java.util.List;
 
-/**
- *
+/*
  * @author deph
  */
 public class Ranker {
@@ -32,7 +31,12 @@ public class Ranker {
      *
      * @return kartu as
      */
-    // Ryan
+    /**
+     * 
+     * isOnePair merupakan menentukan sepasang kartu yang sama. Method isOnePair memerlukan variabel count untuk mengukur pasang kartu yang sama.
+     * Kartu akan dibandingkan menggunakan perulangan. Variabel count akan bertambah jika ada kartu yang sama. 
+     * Jika variabel count lebih dari 1 maka return false dan perulangan dihentikan. Jika count sama dengan 0 maka return akan false.
+     */
     public boolean isOnePair() {
         int count = 0;
         boolean check = true;
@@ -56,10 +60,15 @@ public class Ranker {
 
     /*
     by @april nf
+<<<<<<< HEAD
     Method isTwoPairs untuk membaca kartu apakah termasuk kategori Two pairs yaitu
     kartu yang mempunyai dua pasang sama 
      */
       
+=======
+    */
+    
+>>>>>>> 2fdc2498096440f42985f3ad258d440b4ba3d29a
     public boolean isTwoPairs() {
         boolean isTwoPairs = false;
         int counter = 0;
@@ -75,7 +84,7 @@ public class Ranker {
         }
         return isTwoPairs;
     }
-
+    //taufik
     public boolean isThreeAKind() {
         List<Integer> ls = new ArrayList<>();
         int count = 0;
@@ -107,7 +116,7 @@ public class Ranker {
         }
         return false;
     }
-
+    //damar
     public boolean isStraight() {
         boolean isStraight = false;
         int array[] = new int[5];
@@ -143,9 +152,14 @@ public class Ranker {
         }
         return isStraight;
     }
-
+ 
     /**
+<<<<<<< HEAD
      * isFlush Yusuf Hanafi Angkat
+=======
+     * isFlush -> Menentukan apakah semua kartu bergambar sama.
+     * Yusuf Hanafi Angkat
+>>>>>>> 2fdc2498096440f42985f3ad258d440b4ba3d29a
      */
     public boolean isFlush() {
         boolean flush = true;
@@ -156,11 +170,43 @@ public class Ranker {
         }
         return flush;
     }
-
+    
+    //Natan
     public boolean isFullHouse() {
-        return false;
-    }
-
+        boolean fullhouse = true;
+        int count=0;
+        int[] notcount = new int[5];
+        int j = 0;
+        int m=0;
+        for (int i = 0; i < cards.size(); i++)
+        {
+            int a = cards.get(i).getLevel();
+            while (j < cards.size()) {
+                if (cards.get(j).getLevel() == a) {
+                    count++;
+                } else {
+                    notcount[m] = cards.get(j).getLevel();
+                    m++;
+                }
+                j++;
+        }
+        if (count == 3) 
+        {
+            if (notcount[0] == notcount[1]) 
+            {
+                return fullhouse;
+            }
+        }   
+    }return false;
+}
+    /**
+     * method fourofkind akan menghasilkan nilai True dan False
+     * method ini akan mengeluarkan nilai True Jika 4 dari total semua kartu (5) sama level.
+     * @return True
+     * method ini akan mengeluarkan nilai False . Jika tidak memenuhi syarat .
+     *
+     * by: Sigit Yudhianto
+     */
     public boolean isFourOfAKind() {
         for (int i = 0; i < cards.size(); i++) {
             int jumlahsama = 0;
@@ -176,11 +222,49 @@ public class Ranker {
         return false;
     }
 
+    //Muhammad Donny Setya
+    /**
+    * Method ini untuk mendapatkan nilai Straight Flush
+    * Method ini berhubungan dengan method isStraight dan isFlush
+    * Method ini kebalikan dari method isRoyalFlush
+    */
     public boolean isStraighFlush() {
-        return false;
+        if(isStraight() && isFlush()){
+            int i = 0;
+            int j = 0;
+            while(i < cards.size()){
+                if(cards.get(i).getLevel() == 13){
+                    while(j < cards.size()){
+                        if(cards.get(j).getLevel() == 14){
+                           return false; 
+                        }
+                     j++;   
+                    }return true;
+                }
+                i++;
+            }return true;
+        }
+        return false;   
     }
-
+    
+    //Donny Salman
     public boolean isRoyalFlush() {
+        if (isFlush()&&isStraight()) {
+            int i = 0;
+            int j = 0;
+            while (i < cards.size()) {
+                if (cards.get(i).getLevel() == 13) {
+                    while (j < cards.size()) {
+                        if (cards.get(j).getLevel() == 14) {
+                            return true;
+                        }
+                        j++;
+                    } return false;
+                }
+                i++;
+            }
+            return false;
+        }
         return false;
     }
 }
